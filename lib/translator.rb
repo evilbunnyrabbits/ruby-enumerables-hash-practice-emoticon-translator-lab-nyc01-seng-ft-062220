@@ -18,8 +18,17 @@ end
 
 
 def get_japanese_emoticon(file, string)
-  
-
+  data = load_library(array)
+  data.each do |key, value|
+    value.each do |inner_key, inner_value|
+      japanese = value[:japanese]
+      english = value[:english]
+      if english == string
+        return japanese
+      end
+    end
+  end
+  return 'Sorry, that emoticon was not found'
 end
 
 def get_english_meaning(file, string)

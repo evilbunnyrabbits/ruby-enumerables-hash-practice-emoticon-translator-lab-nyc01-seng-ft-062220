@@ -18,7 +18,7 @@ end
 
 
 def get_japanese_emoticon(file, string)
-  data = load_library(array)
+  data = load_library(file)
   data.each do |key, value|
     value.each do |inner_key, inner_value|
       japanese = value[:japanese]

@@ -17,10 +17,19 @@ def load_library(file)
 end
 
 
-def get_japanese_emoticon
-  # code goes here
+def get_japanese_emoticon(file, string)
+
 end
 
-def get_english_meaning
-  # code goes here
+def get_english_meaning(file, string)
+  data = load_library(file)
+  data.each do |key, value|
+    value.each do |inner_key, inner_value|
+      japanese = value[:japanese]
+      english = value[:english]
+      if japanese == string
+        return english
+      end
+    end
+  end
 end

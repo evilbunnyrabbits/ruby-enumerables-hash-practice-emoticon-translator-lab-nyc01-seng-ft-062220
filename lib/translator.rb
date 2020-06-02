@@ -38,7 +38,7 @@ def get_english_meaning(file, string)
       japanese = value[:japanese]
       english = value[:english]
       if japanese == string
-        return english
+        return english.to_s
       end
     end
   end
